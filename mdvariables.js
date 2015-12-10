@@ -2,7 +2,7 @@ var Plugin = require('markdown-it-regexp');
 
 var MdVariables = function(dataFn) {
     return Plugin(
-        /@(\w+)/,
+        /{{>\s*['"]?([^'"\s]*)['"]?\s*}}/,
         function(match, utils) {
             var data = dataFn();
             if(data[match[1]])
